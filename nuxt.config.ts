@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    ssr: true,
     app: {
         head: {
             htmlAttrs: {
@@ -11,6 +10,10 @@ export default defineNuxtConfig({
                 {
                     name: "viewport",
                     content: "width=device-width, initial-scale=1.0"
+                },
+                {
+                    name: "description",
+                    content: "Orchard FED Test"
                 }
             ],
             title: "Orchard FED Test",

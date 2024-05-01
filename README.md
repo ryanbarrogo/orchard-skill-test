@@ -1,6 +1,8 @@
-# Nuxt 3 Minimal Starter
+# Orchard Skill Test - Ryan Barrogo
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+I used Nuxt3 and Tailwind for this test as these are the latest tech that's being used in the market.
 
 ## Setup
 
@@ -9,15 +11,6 @@ Make sure to install the dependencies:
 ```bash
 # npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
@@ -27,15 +20,18 @@ Start the development server on `http://localhost:3000`:
 ```bash
 # npm
 npm run dev
+```
 
-# pnpm
-pnpm run dev
+## Static Build
 
-# yarn
-yarn dev
+Build the application for static hosting:
 
-# bun
-bun run dev
+```bash
+# npm
+npm run generate
+
+# Run this when doing local testing
+npx serve .output/public
 ```
 
 ## Production
@@ -45,15 +41,6 @@ Build the application for production:
 ```bash
 # npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
 Locally preview production build:
@@ -61,15 +48,6 @@ Locally preview production build:
 ```bash
 # npm
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

@@ -16,7 +16,9 @@
                 <div>
                     <h2 class="item-title mt-4 w-full text-left font-family-regular font-semibold">{{ item.title }}</h2>
                     <p class="item-description mt-2 mb-5 w-full text-left font-family-light">{{ item.description }}</p>
-                    <a class="pb-2 text-white border-b-2 font-semibold border-red-600">READ MORE</a>
+                    <a class="pb-2 text-white border-b-2 font-semibold border-red-600" @click="readMore(item)">{{
+                        readMoreString.toLocaleUpperCase()
+                    }}</a>
                 </div>
             </div>
         </div>
@@ -25,6 +27,7 @@
 
 <script setup>
 const title = "All The Latest From AEG";
+const readMoreString = "Read More";
 const galleryItems = [
     {
         imageUrl: "/assets/component-two/Image-01.jpg",
@@ -45,6 +48,10 @@ const galleryItems = [
             "This exclusive cookbook gives you all the know-how you need. We've designed it to make sure you get the most out of our products - and the best out of your food."
     }
 ];
+
+const readMore = (contextData) => {
+    console.log(contextData);
+};
 </script>
 
 <style lang="scss" scoped>
