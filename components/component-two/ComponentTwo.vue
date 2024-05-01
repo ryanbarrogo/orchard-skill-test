@@ -3,19 +3,23 @@
         <div class="w-full text-center mb-20">
             <h2 class="title font-family-light">{{ title.toLocaleUpperCase() }}</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xs:gap-10 sm:gap-10 gap-5">
+        <div
+            ref="animatedElement"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xs:gap-10 sm:gap-10 gap-5"
+            :class="{ animate__animated: animate, animate__fadeInUp: animate, hide: !animate }"
+        >
             <!-- Gallery Item -->
             <div v-for="(item, index) in galleryItems" :key="index" class="flex flex-col items-center">
-                <div class="w-full image-container mb-4 border-b-4 border-red-600">
-                    <img
-                        :src="item.imageUrl"
-                        :alt="'Image ' + (index + 1)"
-                        class="card-image w-full h-auto md:h-80 object-cover"
-                    />
+                <div class="w-full image-container mb-4 border-b-4 border-red-600 latest-item">
+                    <img :src="item.imageUrl" :alt="item.title" class="card-image w-full h-auto md:h-80 object-cover" />
                 </div>
                 <div>
-                    <h2 class="item-title mt-4 w-full text-left font-family-regular font-semibold">{{ item.title }}</h2>
-                    <p class="item-description mt-2 mb-5 w-full text-left font-family-light">{{ item.description }}</p>
+                    <h2 class="item-title mt-4 w-full text-left font-family-regular font-semibold">
+                        {{ item.title }}
+                    </h2>
+                    <p class="item-description mt-2 mb-5 w-full text-left font-family-light">
+                        {{ item.description }}
+                    </p>
                     <a class="pb-2 text-white border-b-2 font-semibold border-red-600" @click="readMore(item)">{{
                         readMoreString.toLocaleUpperCase()
                     }}</a>
@@ -52,6 +56,32 @@ const galleryItems = [
 const readMore = (contextData) => {
     console.log(contextData);
 };
+
+const animatedElement = ref(null);
+const animate = ref(false);
+
+onMounted(() => {
+    const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.25
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                animateElement();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    observer.observe(animatedElement.value);
+
+    const animateElement = () => {
+        animate.value = true;
+    };
+});
 </script>
 
 <style lang="scss" scoped>
@@ -65,5 +95,9 @@ const readMore = (contextData) => {
 
 .item-description {
     font-size: 18px;
+}
+
+.hide {
+    opacity: 0;
 }
 </style>

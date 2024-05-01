@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto mt-5">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div class="w-full cursor-pointer">
+            <div class="w-full cursor-pointer animate__animated animate__fadeInLeft">
                 <img
                     src="/assets/component-one/Image-01.jpg"
                     alt="Image 1"
@@ -10,7 +10,7 @@
                 />
             </div>
             <div class="w-full md:col-span-1 flex flex-col">
-                <div class="flex-1 mb-4 cursor-pointer">
+                <div class="flex-1 mb-4 cursor-pointer animate__animated animate__fadeInDown">
                     <img
                         src="/assets/component-one/Image-02.jpg"
                         alt="Image 2"
@@ -18,7 +18,7 @@
                         @click="openModal('/assets/component-one/Image-02@2x.jpg')"
                     />
                 </div>
-                <div class="flex-1 cursor-pointer">
+                <div class="flex-1 cursor-pointer animate__animated animate__fadeInUp">
                     <img
                         src="/assets/component-one/Image-03.jpg"
                         alt="Image 3"
@@ -28,11 +28,11 @@
                 </div>
             </div>
             <div class="w-full lg:col-span-1 md:col-span-2">
-                <div class="main-content flex flex-col justify-center">
+                <div class="main-content flex flex-col justify-center animate__animated animate__zoomIn">
                     <h2 class="title font-family-light">{{ dynamicContent.main_content.title.toLocaleUpperCase() }}</h2>
                     <p class="content font-family-light">{{ dynamicContent.main_content.content }}</p>
                 </div>
-                <div class="sub-content flex flex-col justify-center">
+                <div class="sub-content flex flex-col justify-center animate__animated animate__zoomIn">
                     <h2 class="title">{{ dynamicContent.sub_content.title.toLocaleUpperCase() }}</h2>
                     <p class="content">{{ dynamicContent.sub_content.content }}</p>
                 </div>

@@ -1,8 +1,11 @@
-# Orchard Skill Test - Ryan Barrogo
+# Orchard Skill Test
+
+### Author: Ryan Barrogo
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-I used Nuxt3 and Tailwind for this test as these are the latest tech that's being used in the market.
+I used Nuxt3 and Tailwind for this test as these are the latest tech that's being used in the market and it is
+easier and faster to develop using both technologies.
 
 ## Setup
 
@@ -24,7 +27,7 @@ npm run dev
 
 ## Static Build
 
-Build the application for static hosting:
+Build the application for static hosting, testing via lighthouse, etc.:
 
 ```bash
 # npm

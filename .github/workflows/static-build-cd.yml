@@ -1,4 +1,4 @@
-name: Generate a build and deploy to hostinger web hosting
+name: Generate a build and deploy to static web hosting
 
 on:
     push:
