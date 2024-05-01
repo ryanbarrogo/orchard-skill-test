@@ -1,0 +1,41 @@
+//FONT FACES
+@font-face {
+    font-family: "OpenSans-Regular";
+    src: url("~/assets/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "OpenSans-Light";
+    src: url("~/assets/fonts/OpenSans/OpenSans-Light.ttf") format("truetype");
+}
+
+//CUSTOM STYLES AND CLASSES
+* {
+    font-family: OpenSans-Regular, sans-serif;
+}
+
+.font-family-regular {
+    font-family: OpenSans-Regular, sans-serif;
+}
+
+.font-family-light {
+    font-family: OpenSans-Light, sans-serif;
+}
+
+body {
+    color: var(--PRIMARY_TEXT_COLOR);
+    background: var(--PRIMARY_BG);
+}
+
+//BREAKPOINTS
+/**
+    Breakpoint for small screens
+    Needed to add since tailwind's breakpoints are using min-width
+    It will only work on 640px and above
+ */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
