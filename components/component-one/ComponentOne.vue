@@ -40,15 +40,15 @@
         </div>
 
         <!-- Modal -->
-        <tailwind-modal :visible="isModalVisible" @update:visible="closeModal">
+        <ImageViewModal v-model:visible="isModalVisible">
             <img :src="selectedImage" alt="Selected Image" class="w-full" />
-        </tailwind-modal>
+        </ImageViewModal>
     </div>
 </template>
 
 <script setup>
-import TailwindModal from "~/components/modal/ImageViewModal.vue";
 import { reactive, ref } from "vue";
+import ImageViewModal from "~/components/modal/ImageViewModal.vue";
 
 const isModalVisible = ref(false);
 const selectedImage = ref("");
@@ -68,10 +68,6 @@ const dynamicContent = reactive({
 const openModal = (image) => {
     selectedImage.value = image;
     isModalVisible.value = true;
-};
-
-const closeModal = () => {
-    isModalVisible.value = false;
 };
 </script>
 

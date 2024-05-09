@@ -47,6 +47,7 @@ const close = () => {
 .modal-leave-active .modal-container {
     transform: scale(1);
 }
+
 .modal-parent {
     position: fixed;
     top: 0;
@@ -58,6 +59,7 @@ const close = () => {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
+    z-index: 1;
 
     .modal-container {
         width: 80vw;
